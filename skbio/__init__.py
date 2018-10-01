@@ -6,6 +6,11 @@
 # The full license is in the file COPYING.txt, distributed with this software.
 # ----------------------------------------------------------------------------
 
+import sys
+
+print('hello from __ini__.py')
+print(sys.path)
+
 
 # Add skbio.io to sys.modules to prevent cycles in our imports
 import skbio.io  # noqa
