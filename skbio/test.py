@@ -9,4 +9,8 @@
 from skbio.util import pytestrunner
 
 if __name__ == '__main__':
+    import sys
+
+    print('hello from test.py')
+    print(sys.path)
     pytestrunner()
