@@ -344,6 +344,15 @@ def pytestrunner():
     except ImportError:
         pandas = None
 
+    import sys
+
+    # The first element of sys.path is always the directory containing the
+    # script that was used to invoke the Python interpreter. In our case, we
+    # never want to consider the source dir for the PYTHONPATH, so drop that
+    # from the list of paths searched. This ensures that the _installed_
+    # package is tested.
+    sys.path.pop(0)
+
     # import here, cause outside the eggs aren't loaded
     import pytest
 
