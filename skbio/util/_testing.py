@@ -351,7 +351,10 @@ def pytestrunner():
     # never want to consider the source dir for the PYTHONPATH, so drop that
     # from the list of paths searched. This ensures that the _installed_
     # package is tested.
+    # More info: https://docs.python.org/3.7/library/sys.html#sys.path
+    print(sys.path)
     sys.path.pop(0)
+    print(sys.path)
 
     # import here, cause outside the eggs aren't loaded
     import pytest
